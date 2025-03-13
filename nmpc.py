@@ -166,7 +166,7 @@ class NMPC:
 
         return A, B, c
 
-    @partial(jax.jit, static_argnums=(0,))
+    @partial(jax.jit, static_argnums=(0, 3))
     def _linearize_trajectory(
         self, x_traj: jnp.ndarray, u_traj: jnp.ndarray, dt: float
     ) -> Tuple[List[jnp.ndarray], List[jnp.ndarray], List[jnp.ndarray]]:
