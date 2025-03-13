@@ -2,14 +2,16 @@
 ## Overview
 This repository contains an example that implements a Model Predictive Control (MPC) controller for trajectory tracking of a unicycle while enforcing safety constraints using Control Barrier Functions (CBFs). The goal is to follow a predefined reference trajectory while avoiding an obstacle and staying within a safe region.
 
-There have been many repositories with similar implementations, but most of them are using CasADi or MATLAB. This repository is a Python implementation that uses CVXPY for the QP subproblem and SQP for handling nonlinearities for the MPC controller.
+There have been many repositories with similar implementations, but most of them are using CasADi or MATLAB. This repository is a Python implementation that uses CVXPY for the QP subproblem and jax for autograd as well as parallelization.
 
 ![](assets/mpccbf_tracking.png)
 
 ## Requirements
 - Python 3.10+
+- `jax`
 - `cvxpy`
-- `numpy`, `matplotlib`
+- `numpy`
+- `matplotlib`
 
 ## Demo
 To run the demo, simply run the `sqp_mpccbf_tracking.ipynb` notebook in Google Colab [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shaoanlu/sqp_nmpc_cbf_cvxpy/blob/main/sqp_mpccbf_tracking.ipynb).
