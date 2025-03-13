@@ -19,9 +19,6 @@ To run the demo, simply run the `sqp_mpccbf_tracking.ipynb` notebook in Google C
 - QP formulation using cvxpy with cp.Parameter for warm-starting and fast updates.
 
 ## Trouble Shooting
-- OSQP failed: remove `time_limit` argument in `prob.solve(...)` or try different QP solvers.
-
-## Known Issues
-- Trajectory tracking for `figure8` trajectory is not working properly.
+- OSQP failed: remove `time_limit` argument in `prob.solve(...)` or increase `max_sqp_iter` or try different QP solvers.
 
 ![](assets/mpccbf_tracking_anim.gif)
