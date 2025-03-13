@@ -1,2 +1,27 @@
-# sqp_nmpc_cbf_cvxpy
-MPC with CBF constraints using cvxpy and OSQP
+# MPC-based Unicycle Trajectory Tracking with Control Barrier Functions (CBFs)
+## Overview
+This repository contains a example that implements a Model Predictive Control (MPC) framework for trajectory tracking of a unicycle while enforcing safety constraints using Control Barrier Functions (CBFs). The goal is to follow a predefined circular reference trajectory while avoiding an obstacle and staying within a safe operational region.
+
+![](assets/mpccbf_tracking.png)
+
+## Requirements
+- Python 3.10+
+- `cvxpy`
+- `numpy`, `matplotlib`
+
+## Demo
+To run the demo, simply run the `sqp_mpccbf_tracking.ipynb` notebook in Google Colab [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shaoanlu/sqp_nmpc_cbf_cvxpy/blob/main/sqp_mpccbf_tracking.ipynb).
+
+## Key Features of the MPC + CBF Implementation
+- Trajectory tracking with real-time MPC using linearized dynamics.
+- Control Barrier Functions (CBFs) to enforce  `x - y + 1.2 >= 0` (visualized as a wall at upper left)
+- Sequential Quadratic Programming (SQP) for handling nonlinearities and updating the linearization at each iteration.
+- QP formulation using cvxpy with cp.Parameter for warm-starting and fast updates.
+
+## Trouble Shooting
+- OSQP failed: remove `time_limit` argument in `prob.solve(...)` or try different QP solvers.
+
+## Known Issues
+- Trajectory tracking for `figure8` trajectory is not working properly.
+
+![](assets/mpccbf_tracking_anim.gif)
