@@ -1,6 +1,6 @@
 # MPC-based Unicycle Trajectory Tracking with Control Barrier Functions (CBFs)
 ## Overview
-This repository contains a example that implements a Model Predictive Control (MPC) framework for trajectory tracking of a unicycle while enforcing safety constraints using Control Barrier Functions (CBFs). The goal is to follow a predefined circular reference trajectory while avoiding an obstacle and staying within a safe operational region.
+This repository contains an example that implements a Model Predictive Control (MPC) controller for trajectory tracking of a unicycle while enforcing safety constraints using Control Barrier Functions (CBFs). The goal is to follow a predefined reference trajectory while avoiding an obstacle and staying within a safe region.
 
 ![](assets/mpccbf_tracking.png)
 
