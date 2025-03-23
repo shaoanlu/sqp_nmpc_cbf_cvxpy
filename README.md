@@ -16,9 +16,9 @@ There are already many repositories with similar implementations, but most of th
 ## Demo
 To run the demo, simply run the `sqp_mpccbf_tracking.ipynb` notebook in Google Colab [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shaoanlu/sqp_nmpc_cbf_cvxpy/blob/main/sqp_mpccbf_tracking.ipynb).
 
-## Key Features of the MPC-CBF Implementation
-- Trajectory tracking with real-time MPC using linearized dynamics.
-- Control Barrier Functions (CBFs) to enforce  `x - y + 1.2 >= 0` (visualized as a wall at upper left)
+## Key Features of the MPC-DCBF Implementation
+- Trajectory tracking with NMPC.
+- Discrete Control Barrier Functions (CBFs) to enforce  `h[k+1] - h[k] >= -a;pha * h[k]` as a MPC constraint
 - Sequential Quadratic Programming (SQP) for handling nonlinearities and updating the linearization at each iteration.
 - QP formulation using cvxpy with cp.Parameter for warm-starting and fast updates.
 
